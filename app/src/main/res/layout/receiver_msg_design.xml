@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingRight="@dimen/_10sdp"
+
+    android:background="@drawable/receiver_background"
+    android:maxWidth="@dimen/_250sdp"
+    android:maxHeight="@dimen/_300sdp"
+    android:minHeight="@dimen/_30sdp">
+
+    <TextView
+        android:id="@+id/receiverMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:text="Hello this is mansoor and i am not a good man under this section"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold |italic"
+        android:maxWidth="@dimen/_215sdp"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/receiverTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:text="18:29"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_10ssp"
+        android:paddingLeft="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/receiverMsg" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

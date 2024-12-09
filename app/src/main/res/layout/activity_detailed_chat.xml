@@ -1,0 +1,138 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailedChat">
+
+    <!-- Top bar layout (ConstraintLayout) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#787775"
+        android:paddingLeft="@dimen/_10sdp">
+
+        <!-- Back arrow ImageView -->
+        <ImageView
+            android:id="@+id/backPress"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/baseline_keyboard_backspace_24"
+            app:tint="#ffffff"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <!-- Profile image -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePic"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:src="@drawable/einstien"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/backPress"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <!-- Name TextView -->
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mansoor"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold |italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@+id/profilePic"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <!-- Call Icon -->
+<!--        <ImageView-->
+<!--            android:layout_width="@dimen/_20sdp"-->
+<!--            android:layout_height="@dimen/_19sdp"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:layout_marginHorizontal="@dimen/_5sdp"-->
+<!--            android:layout_marginEnd="@dimen/_15sdp"-->
+<!--            android:src="@drawable/baseline_call_24"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/imageView2"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.5" />-->
+
+<!--        &lt;!&ndash; Video Icon &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView2"-->
+<!--            android:layout_width="@dimen/_20sdp"-->
+<!--            android:layout_height="@dimen/_20sdp"-->
+<!--            android:layout_marginHorizontal="@dimen/_10sdp"-->
+<!--            android:layout_marginEnd="@dimen/_25sdp"-->
+<!--            android:src="@drawable/baseline_videocam_24"-->
+<!--            app:tint="#ffffff"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.5" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/dashboard"
+        android:layout_above="@+id/sendLayout"/>
+
+    <!-- Message Input and Send Button -->
+    <LinearLayout
+        android:id="@+id/sendLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <!-- Message Input RelativeLayout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/messege_background">
+
+            <EditText
+                android:id="@+id/edtMessege"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter the message"
+                android:maxLines="6"
+                android:textColor="#000000"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:textColorHint="#8A8888"
+                app:layout_constraintEnd_toStartOf="@+id/sendMsg"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Send Button -->
+            <ImageView
+                android:id="@+id/sendMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_send_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="@dimen/_10sdp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Optional Extra ImageView (Einstein) -->
+
+
+    </LinearLayout>
+
+</RelativeLayout>

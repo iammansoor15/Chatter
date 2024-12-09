@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/sender_baclground"
+        android:maxWidth="@dimen/_250sdp"
+        android:maxHeight="@dimen/_300sdp"
+        android:minHeight="@dimen/_20sdp">
+
+        <TextView
+            android:id="@+id/senderMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginTop="4dp"
+            android:maxWidth="@dimen/_230sdp"
+            android:text="Hello this iis section"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold | italic"
+
+            app:layout_constraintEnd_toStartOf="@+id/timeGuideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/senderTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:text="18:29"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/timeGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/senderMsg"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/timeGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_15sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
