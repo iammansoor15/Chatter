@@ -79,6 +79,7 @@ public class SignUp extends AppCompatActivity {
                                     database.getReference().child("Users").child(id).setValue(user);
                                     Intent i = new Intent(SignUp.this, HomeScreen.class);
                                     startActivity(i);
+                                    finish();
                                 }
                                 else {
                                     Toast.makeText(SignUp.this, "Failed", Toast.LENGTH_SHORT).show();

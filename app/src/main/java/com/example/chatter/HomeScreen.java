@@ -39,6 +39,8 @@ public class HomeScreen extends AppCompatActivity {
 
 
 
+
+
         //Bottom Navigation
         binding.bottomNavigation.setSelectedItemId(R.id.chat);
         binding.bottomNavigation.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -83,6 +85,7 @@ public class HomeScreen extends AppCompatActivity {
             auth.signOut();
             Intent iNext = new Intent(HomeScreen.this, sign_in.class);
             startActivity(iNext);
+            finish();
 
         }
         return super.onOptionsItemSelected(item);

@@ -56,19 +56,33 @@ public class sign_in extends AppCompatActivity {
         binding.btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = binding.email.getText().toString();
-                String password = binding.password.getText().toString();
+                String email = binding.email.getText().toString().trim();
+                String password = binding.password.getText().toString().trim();
 
-                auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                // Validate email and password are not empty
+                if (email.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(sign_in.this, "Please enter both email and password", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                        Intent iNext = new Intent(sign_in.this, HomeScreen.class);
-                        startActivity(iNext);
-                    }
-                });
+                auth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // If login is successful, move to HomeScreen
+                                    Intent iNext = new Intent(sign_in.this, HomeScreen.class);
+                                    startActivity(iNext);
+                                    finish();
+                                } else {
+                                    // If login fails, show a toast
+                                    Toast.makeText(sign_in.this, "Authentication Failed: Incorrect Credentials", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
             }
         });
+
 
     }
 }

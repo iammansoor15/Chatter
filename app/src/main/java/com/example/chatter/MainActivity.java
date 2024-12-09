@@ -41,9 +41,11 @@ public class MainActivity extends AppCompatActivity {
                 if(auth.getCurrentUser()!=null){
                     iNext = new Intent(MainActivity.this,HomeScreen.class);
                     Log.d("MAIN ACTIVTY"," Logging in into Home Screen");
+                    finish();
                 }else{
                     iNext = new Intent(MainActivity.this, sign_in.class);
                     Log.d("MAIN ACTIVTY"," Logging in into Login Page");
+                    finish();
                 }
                 startActivity(iNext);
                 finish();
